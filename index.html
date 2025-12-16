@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trend Boost - Marketing & Branding Agency</title>
+  <meta name="description" content="Boost jouw merk. Boost jouw groei. Trend Boost is een marketing- en brandingbureau gespecialiseerd in merkstrategie, marketing, social media, campagnes en websites.">
+  <meta name="keywords" content="marketing, branding, merkstrategie, social media, campagnes, websites, marketingbureau">
+  <style>
+    /* CSS Variables - Trend Boost Kleuren */
+    :root {
+      --color-primary: #FFD700;
+      --color-primary-dark: #FFC700;
+      --color-black: #1a1a1a;
+      --color-dark-gray: #2d2d2d;
+      --color-gray: #666666;
+      --color-light-gray: #f5f5f5;
+      --color-white: #ffffff;
+      --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+      --spacing-xs: 0.5rem;
+      --spacing-sm: 1rem;
+      --spacing-md: 2rem;
+      --spacing-lg: 3rem;
+      --spacing-xl: 4rem;
+      --spacing-xxl: 6rem;
+      --border-radius: 8px;
+      --border-radius-lg: 16px;
+      --transition: all 0.3s ease;
+      --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+      --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      color: var(--color-black);
+      background-color: var(--color-white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); }
+    h2 { font-size: clamp(2rem, 4vw, 3rem); }
+    h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+
+    p { margin-bottom: var(--spacing-sm); }
+    a { text-decoration: none; color: inherit; transition: var(--transition); }
+
+    .container {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-md);
+    }
+
+    @media (max-width: 768px) {
+      .container { padding: 0 var(--spacing-sm); }
+    }
+
+    /* Header */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background-color: var(--color-white);
+      transition: var(--transition);
+      box-shadow: none;
+    }
+
+    .header.scrolled {
+      box-shadow: var(--shadow-sm);
+    }
+
+    .header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    @media (max-width: 768px) {
+      .header .container { padding: var(--spacing-xs) var(--spacing-sm); }
+    }
+
+    .logo {
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+    }
+
+    .logo:hover { opacity: 0.8; }
+
+    .logo-img {
+      height: 90px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    @media (max-width: 768px) {
+      .logo-img { height: 70px; }
+    }
+
+    .nav {
+      display: flex;
+    }
+
+    @media (max-width: 968px) {
+      .nav { display: none; }
+    }
+
+    .nav-list {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      gap: var(--spacing-md);
+    }
+
+    .nav-list li a {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--color-black);
+      padding: var(--spacing-xs) var(--spacing-sm);
+      transition: var(--transition);
+    }
+
+    .nav-list li a:hover {
+      color: var(--color-primary);
+    }
+
+    .cta-button {
+      background-color: var(--color-primary);
+      color: var(--color-black);
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: inherit;
+    }
+
+    .cta-button:hover {
+      background-color: var(--color-primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Mobile Menu */
+    .mobile-menu-button {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: var(--spacing-xs);
+      z-index: 1001;
+    }
+
+    @media (max-width: 968px) {
+      .mobile-menu-button { display: flex; }
+    }
+
+    .mobile-menu-button span {
+      width: 25px;
+      height: 3px;
+      background-color: var(--color-black);
+      transition: var(--transition);
+      border-radius: 2px;
+      display: block;
+    }
+
+    .mobile-menu-button.menu-open span:nth-of-type(1) {
+      transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .mobile-menu-button.menu-open span:nth-of-type(2) {
+      opacity: 0;
+    }
+
+    .mobile-menu-button.menu-open span:nth-of-type(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    .mobile-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: var(--color-white);
+      box-shadow: var(--shadow-md);
+      padding: var(--spacing-md);
+      z-index: 1000;
+    }
+
+    @media (max-width: 968px) {
+      .mobile-nav { display: block; }
+    }
+
+    .mobile-nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-sm);
+    }
+
+    .mobile-nav-list li a {
+      width: 100%;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--color-black);
+      padding: var(--spacing-sm);
+      transition: var(--transition);
+      display: block;
+    }
+
+    .mobile-nav-list li a:hover {
+      color: var(--color-primary);
+      background-color: var(--color-light-gray);
+      border-radius: var(--border-radius);
+    }
+
+    .mobile-cta-button {
+      background-color: var(--color-primary);
+      color: var(--color-black);
+      font-weight: 600;
+      border-radius: var(--border-radius);
+      margin-top: var(--spacing-sm);
+      padding: var(--spacing-sm);
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: inherit;
+      width: 100%;
+    }
+
+    .mobile-cta-button:hover {
+      background-color: var(--color-primary-dark);
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 100px;
+      background: linear-gradient(135deg, var(--color-white) 0%, var(--color-light-gray) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-xl);
+      align-items: center;
+      padding: var(--spacing-xl) var(--spacing-md);
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 968px) {
+      .hero .container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        text-align: center;
+      }
+    }
+
+    .hero-content {
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .hero-title {
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: var(--spacing-md);
+      color: var(--color-black);
+    }
+
+    .hero-subtitle {
+      font-size: 1.3rem;
+      color: var(--color-gray);
+      margin-bottom: var(--spacing-lg);
+      line-height: 1.7;
+      max-width: 600px;
+    }
+
+    @media (max-width: 968px) {
+      .hero-subtitle {
+        max-width: 100%;
+        font-size: 1.1rem;
+      }
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: var(--spacing-sm);
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 968px) {
+      .hero-buttons { justify-content: center; }
+    }
+
+    .btn {
+      padding: 1.25rem 2.5rem;
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background-color: var(--color-primary);
+      color: var(--color-black);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--color-primary-dark);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media (max-width: 968px) {
+      .hero-image { order: -1; }
+    }
+
+    .hero-img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: var(--border-radius-lg);
+      box-shadow: var(--shadow-lg);
+      object-fit: contain;
+      background-color: rgba(255, 255, 255, 1);
+      background-image: none;
+    }
+
+    /* Partners Section */
+    .partners {
+      padding: var(--spacing-xl) 0;
+      background-color: var(--color-white);
+      border-top: 1px solid var(--color-light-gray);
+    }
+
+    .partners-title {
+      text-align: center;
+      font-size: 1rem;
+      color: var(--color-gray);
+      margin-bottom: var(--spacing-md);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: var(--spacing-md);
+      align-items: center;
+    }
+
+    .partner-logo {
+      text-align: center;
+      color: var(--color-gray);
+      font-weight: 600;
+      font-size: 1.1rem;
+      opacity: 0.7;
+      transition: var(--transition);
+    }
+
+    .partner-logo:hover {
+      opacity: 1;
+      color: var(--color-primary);
+    }
+
+    /* Process Section - Drietrapsraket */
+    .process {
+      padding: var(--spacing-xxl) 0;
+      background-color: var(--color-white);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: var(--spacing-xl);
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      margin-bottom: var(--spacing-md);
+      color: var(--color-black);
+      font-weight: 800;
+    }
+
+    .section-intro {
+      font-size: 1.2rem;
+      color: var(--color-gray);
+      line-height: 1.7;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--spacing-lg);
+      margin-top: var(--spacing-xl);
+    }
+
+    @media (max-width: 768px) {
+      .process-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+      }
+    }
+
+    .process-card {
+      background-color: var(--color-white);
+      padding: var(--spacing-xl);
+      border-radius: var(--border-radius-lg);
+      border: 1px solid var(--color-light-gray);
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .process-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--color-primary);
+    }
+
+    .process-icon {
+      font-size: 3.5rem;
+      margin-bottom: var(--spacing-md);
+      display: block;
+    }
+
+    .process-card-title {
+      font-size: 1.5rem;
+      margin-bottom: var(--spacing-sm);
+      color: var(--color-black);
+      font-weight: 700;
+    }
+
+    .process-card-description {
+      color: var(--color-gray);
+      line-height: 1.7;
+    }
+
+    /* Benefits Section */
+    .benefits {
+      padding: var(--spacing-xxl) 0;
+      background-color: var(--color-light-gray);
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--spacing-lg);
+      margin-top: var(--spacing-xl);
+    }
+
+    @media (max-width: 768px) {
+      .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+      }
+    }
+
+    .benefit-card {
+      background-color: var(--color-white);
+      padding: var(--spacing-lg);
+      border-radius: var(--border-radius-lg);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .benefit-icon {
+      font-size: 2.5rem;
+      margin-bottom: var(--spacing-md);
+      display: block;
+    }
+
+    .benefit-title {
+      font-size: 1.3rem;
+      margin-bottom: var(--spacing-sm);
+      color: var(--color-black);
+      font-weight: 700;
+    }
+
+    /* Results Section */
+    .results {
+      padding: var(--spacing-xxl) 0;
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+      color: var(--color-black);
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--spacing-lg);
+      margin-top: var(--spacing-xl);
+    }
+
+    @media (max-width: 768px) {
+      .results-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+      }
+    }
+
+    .result-card {
+      background-color: var(--color-white);
+      padding: var(--spacing-xl);
+      border-radius: var(--border-radius-lg);
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+      transition: var(--transition);
+    }
+
+    .result-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+    }
+
+    .result-value {
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 800;
+      color: var(--color-black);
+      margin-bottom: var(--spacing-sm);
+      line-height: 1;
+    }
+
+    .result-label {
+      font-size: 1.3rem;
+      margin-bottom: var(--spacing-xs);
+      color: var(--color-black);
+      font-weight: 700;
+    }
+
+    .result-description {
+      color: var(--color-gray);
+      font-size: 1rem;
+    }
+
+    .live-counter {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      color: var(--color-black);
+      margin: var(--spacing-lg) 0;
+      line-height: 1;
+    }
+
+    .counter-description {
+      font-size: 1.1rem;
+      color: var(--color-black);
+      opacity: 0.9;
+    }
+
+    /* About Section */
+    .about {
+      padding: var(--spacing-xxl) 0;
+      background-color: var(--color-white);
+    }
+
+    .about-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .about-text {
+      font-size: 1.2rem;
+      color: var(--color-gray);
+      line-height: 1.8;
+      margin-bottom: var(--spacing-md);
+    }
+
+    /* FAQ Section */
+    .faq {
+      padding: var(--spacing-xxl) 0;
+      background-color: var(--color-light-gray);
+    }
+
+    .faq-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-sm);
+      margin-top: var(--spacing-xl);
+    }
+
+    .faq-item {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-light-gray);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .faq-item:hover {
+      border-color: var(--color-primary);
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: var(--spacing-md);
+      background: none;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--color-black);
+      transition: var(--transition);
+      font-family: inherit;
+    }
+
+    .faq-question:hover {
+      color: var(--color-primary);
+    }
+
+    .faq-icon {
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+      margin-left: var(--spacing-sm);
+    }
+
+    .faq-question.open .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      padding: 0 var(--spacing-md);
+    }
+
+    .faq-answer.open {
+      max-height: 500px;
+      padding: 0 var(--spacing-md) var(--spacing-md);
+    }
+
+    .faq-answer p {
+      color: var(--color-gray);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: var(--spacing-xxl) 0;
+      background-color: var(--color-white);
+    }
+
+    .contact-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .contact-cta {
+      text-align: center;
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .contact-cta-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: var(--spacing-md);
+      color: var(--color-black);
+    }
+
+    .contact-cta-text {
+      font-size: 1.2rem;
+      color: var(--color-gray);
+      line-height: 1.7;
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--spacing-lg);
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .contact-info-item {
+      text-align: center;
+    }
+
+    .contact-info-label {
+      font-weight: 700;
+      color: var(--color-black);
+      margin-bottom: var(--spacing-xs);
+      display: block;
+    }
+
+    .contact-info-value {
+      color: var(--color-gray);
+    }
+
+    .contact-form {
+      background-color: var(--color-light-gray);
+      padding: var(--spacing-xl);
+      border-radius: var(--border-radius-lg);
+    }
+
+    @media (max-width: 768px) {
+      .contact-form { padding: var(--spacing-lg); }
+    }
+
+    .form-group {
+      margin-bottom: var(--spacing-md);
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: var(--spacing-xs);
+      font-weight: 600;
+      color: var(--color-black);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid transparent;
+      border-radius: var(--border-radius);
+      font-size: 1rem;
+      font-family: inherit;
+      background-color: var(--color-white);
+      transition: var(--transition);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--color-primary);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    .submit-button {
+      width: 100%;
+      padding: 1.25rem 2rem;
+      background-color: var(--color-primary);
+      color: var(--color-black);
+      border: none;
+      border-radius: var(--border-radius);
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: inherit;
+    }
+
+    .submit-button:hover {
+      background-color: var(--color-primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Footer */
+    .footer {
+      background-color: var(--color-black);
+      color: var(--color-white);
+      padding: var(--spacing-xxl) 0 var(--spacing-lg);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--spacing-xl);
+      margin-bottom: var(--spacing-xl);
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+      }
+    }
+
+    .footer-column-title {
+      font-size: 1.3rem;
+      margin-bottom: var(--spacing-md);
+      color: var(--color-primary);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .footer-links li a {
+      color: var(--color-white);
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .footer-links li a:hover {
+      color: var(--color-primary);
+    }
+
+    .footer-contact {
+      list-style: none;
+    }
+
+    .footer-contact li {
+      margin-bottom: var(--spacing-md);
+      line-height: 1.7;
+    }
+
+    .footer-contact li strong {
+      color: var(--color-primary);
+      display: block;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .footer-contact li a {
+      color: var(--color-white);
+    }
+
+    .footer-contact li a:hover {
+      color: var(--color-primary);
+    }
+
+    .footer-social {
+      list-style: none;
+    }
+
+    .footer-social li {
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .footer-social li a {
+      color: var(--color-white);
+      transition: var(--transition);
+    }
+
+    .footer-social li a:hover {
+      color: var(--color-primary);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--color-dark-gray);
+      padding-top: var(--spacing-lg);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--spacing-md);
+    }
+
+    @media (max-width: 768px) {
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    .footer-copyright {
+      color: var(--color-gray);
+      font-size: 0.9rem;
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: var(--spacing-sm);
+      align-items: center;
+    }
+
+    .footer-legal a {
+      color: var(--color-gray);
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .footer-legal a:hover {
+      color: var(--color-primary);
+    }
+
+    .footer-legal span {
+      color: var(--color-gray);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .scroll-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .text-center {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="logo" onclick="scrollToSection('hero')">
+        <img src="images/Trendb2.png" alt="Trend Boost" class="logo-img">
+      </div>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="#proces" onclick="scrollToSection('proces'); return false;">Wat wij doen</a></li>
+          <li><a href="#benefits" onclick="scrollToSection('benefits'); return false;">Wat het jou oplevert</a></li>
+          <li><a href="#results" onclick="scrollToSection('results'); return false;">Resultaten</a></li>
+          <li><a href="#over-ons" onclick="scrollToSection('over-ons'); return false;">Over ons</a></li>
+          <li><a href="#faq" onclick="scrollToSection('faq'); return false;">FAQ</a></li>
+          <li><button class="cta-button" onclick="scrollToSection('contact'); return false;">Contact opnemen</button></li>
+        </ul>
+      </nav>
+      <button class="mobile-menu-button" id="mobileMenuButton" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" style="display: none;">
+      <ul class="mobile-nav-list">
+        <li><a href="#proces" onclick="scrollToSection('proces'); return false;">Wat wij doen</a></li>
+        <li><a href="#benefits" onclick="scrollToSection('benefits'); return false;">Wat het jou oplevert</a></li>
+        <li><a href="#results" onclick="scrollToSection('results'); return false;">Resultaten</a></li>
+        <li><a href="#over-ons" onclick="scrollToSection('over-ons'); return false;">Over ons</a></li>
+        <li><a href="#faq" onclick="scrollToSection('faq'); return false;">FAQ</a></li>
+        <li><button class="mobile-cta-button" onclick="scrollToSection('contact'); return false;">Contact opnemen</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          boost je merk,<br>
+          versnel je groei!
+        </h1>
+        <p class="hero-subtitle">
+          Van onzichtbaar naar onmisbaar – wij bedenken, creëren en implementeren marketing- en brandingstrategieën, geoptimaliseerd voor maximaal bereik en resultaat.
+        </p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary" onclick="scrollToSection('contact'); return false;">
+            Gratis kennismakingsgesprek
+          </button>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="images/Trendb1.png" alt="Trend Boost - Marketing & Branding Agency" class="hero-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners -->
+  <section class="partners">
+    <div class="container">
+      <p class="partners-title">Enkele partners waar we samen mee groeien</p>
+      <div class="partners-grid">
+        <div class="partner-logo">TechStart</div>
+        <div class="partner-logo">RetailPro</div>
+        <div class="partner-logo">GreenEnergy</div>
+        <div class="partner-logo">FoodCorp</div>
+        <div class="partner-logo">FinanceHub</div>
+        <div class="partner-logo">HealthPlus</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process - Drietrapsraket -->
+  <section id="proces" class="process">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Jouw drietrapsraket naar resultaat</h2>
+        <p class="section-intro">
+          Zo simpel werkt het: in slechts drie stappen van strategie naar virale impact zonder omkijken. 
+          Geen to-do-lijstjes voor jou, wel voortgang die je kunt volgen. We testen, leren en draaien bij 
+          zodat je bereik – en daarmee je omzet – blijft groeien.
+        </p>
+      </div>
+      <div class="process-grid">
+        <div class="process-card">
+          <div class="process-icon">✍️</div>
+          <h3 class="process-card-title">Stap 1 - Van Jouw Verhaal naar een Plan</h3>
+          <p class="process-card-description">
+            We duiken diep in jouw merk, markt en doelgroep. Samen ontwikkelen we een data-gedreven strategie 
+            die perfect aansluit bij jouw doelen en jouw unieke verhaal vertelt.
+          </p>
+        </div>
+        <div class="process-card">
+          <div class="process-icon">📸</div>
+          <h3 class="process-card-title">Stap 2 - Filmen, editen & lanceren</h3>
+          <p class="process-card-description">
+            Van merkidentiteit tot campagnes – we creëren krachtige content en voeren deze uit op de juiste 
+            kanalen. Content die opvalt, inspireert en resultaten oplevert.
+          </p>
+        </div>
+        <div class="process-card">
+          <div class="process-icon">🚀</div>
+          <h3 class="process-card-title">Stap 3 - Schakelen naar hoogste versnelling</h3>
+          <p class="process-card-description">
+            We monitoren, analyseren en optimaliseren continu. Zo versnellen we jouw groei en zorgen we 
+            voor blijvende resultaten die meetbaar zijn.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section id="benefits" class="benefits">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Wat het jou oplevert</h2>
+        <p class="section-intro">
+          Waarom bedrijven met ons werken? Omdat het werkt. Dit zijn de resultaten: geen beloftes maar cijfers. 
+          Van merkbekendheid naar klanten – zo zetten we strategie om in omzet. Spoiler: meer dan alleen likes.
+        </p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">📈</div>
+          <h3 class="benefit-title">Meer bereik, meer views</h3>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">⭐</div>
+          <h3 class="benefit-title">Sterke naamsbekendheid</h3>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">👥</div>
+          <h3 class="benefit-title">Groeiende community</h3>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">💬</div>
+          <h3 class="benefit-title">Hogere betrokkenheid</h3>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">💰</div>
+          <h3 class="benefit-title">Meer vraag, klanten & omzet</h3>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🎯</div>
+          <h3 class="benefit-title">Aantrekkelijker als werkgever</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section id="results" class="results">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Onze Resultaten</h2>
+        <p class="section-intro" style="color: var(--color-black); opacity: 0.9;">
+          De cijfers liegen niet. Dit is het resultaat van klanten die consequent posten volgens onze strategie.
+        </p>
+      </div>
+      <div class="text-center">
+        <div class="live-counter" id="liveCounter">0</div>
+        <p class="counter-description">miljoenen organische views & elke seconde komen er nieuwe views bij</p>
+      </div>
+      <div class="results-grid">
+        <div class="result-card">
+          <div class="result-value" id="growthCounter">0</div>
+          <h3 class="result-label">Gemiddelde views-groei</h3>
+        </div>
+        <div class="result-card">
+          <div class="result-value">1%</div>
+          <h3 class="result-label">Langere kijktijd</h3>
+        </div>
+        <div class="result-card">
+          <div class="result-value" id="followersCounter">0</div>
+          <h3 class="result-label">Volgersgroei</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About - Meet the Makers -->
+  <section id="over-ons" class="about">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">MEET THE MAKERS</h2>
+      </div>
+      <div class="about-content">
+        <p class="about-text">
+          Al 12+ jaar verdiept in marketing en branding die impact maken. Ons gedreven team combineert creativiteit 
+          met resultaatgerichtheid. Jouw merk wordt niet alleen gezien, maar herkend, gevolgd én gedeeld.
+        </p>
+        <p class="about-text">
+          Het verschil? We beginnen bij jouw verhaal. Geen generieke trends, maar strategieën die passen bij jouw 
+          merk en doelgroep. Door te duiken in jouw 'waarom' creëren we campagnes die organisch viraal kunnen gaan.
+        </p>
+        <p class="about-text">
+          Kort, krachtig en menselijk, dat is waar we in geloven. Marketing die niet wordt genegeerd, maar zorgt 
+          voor aandacht, verbinding en actie. Klaar om samen iets buitengewoons tot leven te brengen? Dat zijn wij ook.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">VEELGESTELDE VRAGEN</h2>
+      </div>
+      <div class="faq-container">
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span>Moet ik zelf content maken?</span>
+              <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Voor het beste resultaat kunnen we alles voor je verzorgen! Dat werkt het beste. Mensen kopen van mensen, 
+                maar geen zorgen, je hoeft niks uit je hoofd te leren. We werken stap-voor-stap en begeleiden je tijdens 
+                het proces. Het voelt als een gewoon gesprek.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span>Hoeveel tijd kost het mij?</span>
+              <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Eén strategiegesprek per maand. Wij regelen de rest: strategie, content, uitvoering, monitoring en optimalisatie. 
+                Jij hoeft alleen authentiek te zijn en feedback te geven waar nodig.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span>Hoe snel zie ik resultaten?</span>
+              <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Eerste groei binnen een maand. Significante impact (duizenden volgers, meer aanvragen, merkbekendheid) meestal 
+                na minstens 3 maanden consistent implementeren. Viral bereik kan elk moment gebeuren.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span>Wat zijn de kosten?</span>
+              <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>
+                We werken met vaste maandpakketten. Na het kennismakingsgesprek sturen we een transparante offerte toe, 
+                afgestemd op jouw doelen en budget.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span>Op welke platformen zijn jullie actief?</span>
+              <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Primair TikTok en Instagram (daar gebeurt de magie). We optimaliseren ook voor YouTube Shorts en LinkedIn, 
+                waar relevant voor jouw doelgroep. Daarnaast werken we met alle belangrijke marketingkanalen.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="contact-container">
+        <div class="contact-cta">
+          <h2 class="contact-cta-title">Benieuwd hoe wij jouw bedrijf kunnen laten groeien?</h2>
+          <p class="contact-cta-text">
+            Kwaliteit gaat voor kwantiteit—elke klant krijgt de aandacht en het maatwerk dat nodig is voor échte resultaten.
+          </p>
+          <p class="contact-cta-text">
+            Interesse? Plan een gratis kennismakingsgesprek van 15 minuten. Geen verplichtingen, geen verkooppraatjes. 
+            Gewoon kijken of het klikt.
+          </p>
+          <button class="btn btn-primary" onclick="scrollToSection('contact-form'); return false;">
+            Ja, ik wil groeien!
+          </button>
+        </div>
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <span class="contact-info-label">T:</span>
+            <span class="contact-info-value">+31 20 123 45 67</span>
+          </div>
+          <div class="contact-info-item">
+            <span class="contact-info-label">E:</span>
+            <span class="contact-info-value">INFO@TRENDBOOST.NL</span>
+          </div>
+        </div>
+        <div class="contact-form" id="contact-form">
+          <h3 style="margin-bottom: var(--spacing-md);">Toch nog Vragen?</h3>
+          <p style="margin-bottom: var(--spacing-lg); color: var(--color-gray);">
+            Stuur een bericht en we reageren zo snel mogelijk.
+          </p>
+          <form id="contactForm" onsubmit="handleFormSubmit(event)">
+            <div class="form-group">
+              <label for="name">Naam / Bedrijfsnaam</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Telefoonnummer</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+              <label for="email">E-mailadres</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Bericht</label>
+              <textarea id="message" name="message" rows="6" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Verzenden</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3 class="footer-column-title">Navigatie</h3>
+          <ul class="footer-links">
+            <li><a href="#proces" onclick="scrollToSection('proces'); return false;">Wat wij doen</a></li>
+            <li><a href="#benefits" onclick="scrollToSection('benefits'); return false;">Wat het jou oplevert</a></li>
+            <li><a href="#results" onclick="scrollToSection('results'); return false;">Resultaten</a></li>
+            <li><a href="#over-ons" onclick="scrollToSection('over-ons'); return false;">Over ons</a></li>
+            <li><a href="#faq" onclick="scrollToSection('faq'); return false;">FAQ</a></li>
+            <li><a href="#contact" onclick="scrollToSection('contact'); return false;">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-column-title">Contact</h3>
+          <ul class="footer-contact">
+            <li>
+              <strong>Adres:</strong><br>
+              Voorbeeldstraat 123<br>
+              1234 AB Amsterdam
+            </li>
+            <li>
+              <strong>Telefoon:</strong><br>
+              <a href="tel:+31201234567">+31 20 123 45 67</a>
+            </li>
+            <li>
+              <strong>E-mail:</strong><br>
+              <a href="mailto:info@trendboost.nl">info@trendboost.nl</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-column-title">Volg ons</h3>
+          <ul class="footer-social">
+            <li><a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2025 Trend Boost. Alle rechten voorbehouden.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy</a>
+          <span>|</span>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll function
+    function scrollToSection(id) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Close mobile menu if open
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        if (mobileNav && mobileNav.style.display === 'block') {
+          mobileNav.style.display = 'none';
+          mobileMenuButton.classList.remove('menu-open');
+        }
+      }
+    }
+
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const mobileNav = document.getElementById('mobileNav');
+      const mobileMenuButton = document.getElementById('mobileMenuButton');
+      if (mobileNav && mobileMenuButton) {
+        if (mobileNav.style.display === 'none' || !mobileNav.style.display) {
+          mobileNav.style.display = 'block';
+          mobileMenuButton.classList.add('menu-open');
+        } else {
+          mobileNav.style.display = 'none';
+          mobileMenuButton.classList.remove('menu-open');
+        }
+      }
+    }
+
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // FAQ Toggle
+    function toggleFAQ(button) {
+      const faqItem = button.parentElement;
+      const faqAnswer = faqItem.querySelector('.faq-answer');
+      const isOpen = button.classList.contains('open');
+      
+      // Close all FAQ items
+      document.querySelectorAll('.faq-question').forEach(q => {
+        q.classList.remove('open');
+        q.parentElement.querySelector('.faq-answer').classList.remove('open');
+      });
+      
+      // Open clicked item if it wasn't open
+      if (!isOpen) {
+        button.classList.add('open');
+        faqAnswer.classList.add('open');
+      }
+    }
+
+    // Animated Counter
+    function animateCounter(element, target, duration = 2000, suffix = '') {
+      let start = 0;
+      const increment = target / (duration / 16);
+      const timer = setInterval(() => {
+        start += increment;
+        if (start >= target) {
+          element.textContent = Math.floor(target) + suffix;
+          clearInterval(timer);
+        } else {
+          element.textContent = Math.floor(start) + suffix;
+        }
+      }, 16);
+    }
+
+    // Live Counter Animation
+    function startLiveCounter() {
+      const counter = document.getElementById('liveCounter');
+      if (!counter) return;
+      
+      let count = 0;
+      const target = 385726494;
+      const increment = target / 2000;
+      
+      const timer = setInterval(() => {
+        count += increment;
+        if (count >= target) {
+          counter.textContent = target.toLocaleString('nl-NL');
+          clearInterval(timer);
+          // Continue counting
+          setInterval(() => {
+            count += 1;
+            counter.textContent = Math.floor(count).toLocaleString('nl-NL');
+          }, 1000);
+        } else {
+          counter.textContent = Math.floor(count).toLocaleString('nl-NL');
+        }
+      }, 16);
+    }
+
+    // Intersection Observer for counters
+    const observerOptions = {
+      threshold: 0.3,
+      rootMargin: '0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+          entry.target.classList.add('animated');
+          
+          if (entry.target.id === 'liveCounter') {
+            startLiveCounter();
+          } else if (entry.target.id === 'growthCounter') {
+            animateCounter(entry.target, 187, 2000, '%');
+          } else if (entry.target.id === 'followersCounter') {
+            animateCounter(entry.target, 278, 2000, '%');
+          }
+        }
+      });
+    }, observerOptions);
+
+    // Observe counters when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      const liveCounter = document.getElementById('liveCounter');
+      const growthCounter = document.getElementById('growthCounter');
+      const followersCounter = document.getElementById('followersCounter');
+      
+      if (liveCounter) observer.observe(liveCounter);
+      if (growthCounter) observer.observe(growthCounter);
+      if (followersCounter) observer.observe(followersCounter);
+
+      // Scroll reveal animations
+      const scrollRevealObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      const revealElements = document.querySelectorAll('.scroll-reveal, .process-card, .benefit-card, .result-card');
+      revealElements.forEach(el => scrollRevealObserver.observe(el));
+    });
+
+    // Form submission
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      const formData = {
+        name: form.name.value,
+        phone: form.phone.value,
+        email: form.email.value,
+        message: form.message.value
+      };
+      
+      console.log('Formulier verzonden:', formData);
+      alert('Bedankt voor je bericht! We nemen zo snel mogelijk contact met je op.');
+      
+      // Reset form
+      form.reset();
+    }
+  </script>
+</body>
+</html>
+
