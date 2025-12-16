@@ -1,0 +1,120 @@
+.contact {
+  padding: var(--spacing-xxl) 0;
+  background-color: var(--color-white);
+  
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    
+    @media (max-width: 768px) {
+      padding: 0 var(--spacing-sm);
+    }
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-black);
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    color: var(--color-gray);
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .form {
+    margin-top: var(--spacing-xl);
+    background-color: var(--color-light-gray);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    
+    @media (max-width: 768px) {
+      padding: var(--spacing-lg);
+    }
+  }
+  
+  .formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
+  
+  .formGroup {
+    margin-bottom: var(--spacing-md);
+    
+    label {
+      display: block;
+      margin-bottom: var(--spacing-xs);
+      font-weight: 600;
+      color: var(--color-black);
+    }
+    
+    input,
+    textarea {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid transparent;
+      border-radius: var(--border-radius);
+      font-size: 1rem;
+      font-family: inherit;
+      background-color: var(--color-white);
+      transition: var(--transition);
+      
+      &:focus {
+        outline: none;
+        border-color: var(--color-primary);
+      }
+    }
+    
+    textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+  }
+  
+  .submitButton {
+    width: 100%;
+    padding: 1.25rem 2rem;
+    background-color: var(--color-primary);
+    color: var(--color-black);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: inherit;
+    
+    &:hover {
+      background-color: var(--color-primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+
+
+
+
+
+
